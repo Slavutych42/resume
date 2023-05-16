@@ -83,14 +83,18 @@
                                                     <br>
                                                     <div>Technologies</div>
                                                     <ul>
-                                                        {{#each projects.technologies}}
+                                                        {{#each projects}}
+                                                        {{#each technologies}}
                                                         <li>{{this}}</li>
+                                                        {{/each}}
                                                         {{/each}}
                                                     </ul>
                                                     <div>Team Members</div>
                                                     <ul>
+                                                        {{#each projects}}
                                                         {{#each team_members}}
-                                                        <li>{{name}}</li>
+                                                        <li>{{name}}, {{title}}</li>
+                                                        {{/each}}
                                                         {{/each}}
                                                     </ul>
                                                 </ul>
