@@ -1,0 +1,62 @@
+<div><h1>List of Web Technologies</h1></div>
+{{#with web}}
+{{#each languages}}
+    <ul>
+        <li>{{name}} ({{version}})</li>
+        <br>
+        <div>{{description}}</div>
+        <br>
+        {{#if elements}}<div><b>HTML Elements:</b></div>{{/if}}
+        {{#each elements}}
+        <br>
+        <ul>
+            <li>{{name}}: {{description}}</li>
+            <br>
+            <div><b>Attributes:</b></div>
+            <br>
+            {{#each attributes}}
+            <ul>
+                <li><b>{{name}}:</b> {{description}}</li>
+            </ul>
+            {{/each}}
+        </ul>
+        {{/each}}
+        {{#if properties}}<div><b>CSS Properties:</b></div>{{/if}}
+        <br>
+        {{#each properties}}
+            <ul>
+                <li><b>{{name}}</b>: {{description}}</li>
+                <br>
+                <div>
+                    <b>Value:</b>
+                    {{#each values}}
+                        <ul>
+                            <li><b>{{value}}:</b> {{description}}</li>
+                        </ul>
+                    {{/each}}
+                </div>
+                <br>
+            </ul>
+        {{/each}}
+        {{#if functions}}<div><b>JS Functions:</b></div>{{/if}}
+        <br>
+        {{#each functions}}
+            <ul>
+                <li><b>{{name}}:</b> {{description}}</li>
+                <br>
+                <div>
+                    <b>Parameters:</b>
+                    {{#each parameters}}
+                        <ul>
+                            <li>{{name}}: {{type}}</li>
+                            <div><i>{{description}}</i></div>
+                        </ul>
+                    {{/each}}
+                </div>
+                <br>
+            </ul>
+        {{/each}}
+    </ul>
+    
+{{/each}}
+{{/with}}
