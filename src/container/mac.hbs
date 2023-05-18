@@ -1,0 +1,76 @@
+<div>
+    <h1>Apple MacBook Pro</h1>
+</div>
+<br>
+<div><strong>{{description}}</strong></div>
+<br>
+<div><b>Category: {{category}}</b></div>
+<hr>
+<div><b>Price: {{price}}</b></div>
+<br>
+<div>
+    <h2>Features</h2>
+    {{#with features}}
+    <ul>
+        {{#with processor}}
+        <li>
+            Processor: {{brand}} {{model}}, {{speed}} {{cores}}({{cache}})
+        </li>
+        {{/with}}
+        {{#with memory}}
+        <li>
+            Memory: {{type}}({{size}}), speed: {{speed}}
+        </li>
+        {{/with}}
+        {{#with storage}}
+        <li>
+            Storage: {{type}} {{size}}
+        </li>
+        {{/with}}
+        {{#with display}}
+        <li>
+            Display: {{size}}({{resolution}}), {{technology}} {{color_space}} brightness: {{brightness}} ({{refresh_rate}})
+        </li>
+        {{/with}}
+        {{#with graphics}}
+        <li>
+            Graphics: {{brand}} {{model}}, {{memory}}
+        </li>
+        {{/with}}
+        {{#each ports}}
+        <li>
+            {{#if ports}}Ports:{{/if}} {{type}}({{count}}) 
+            <div>
+                {{#if features}}Features: {{/if}}
+                {{#each features}}
+                <ul>
+                    <li>{{this}}</li>
+                </ul>
+                {{/each}}
+            </div>
+            {{#if ports}}{{type}}{{/if}}
+        </li>
+        {{/each}}
+        {{#with battery}}
+        <li>
+            Battery: {{type}} capacity: {{capacity}}, {{life}}
+        </li>
+        {{/with}}
+        <li>Weight: {{weight}}</li>
+        {{#with dimensions}}
+            <li>
+                Dimensions: height - {{height}}, width - {{width}}, depth - {{depth}}
+            </li>
+        {{/with}}
+        <li>Operating system: {{operating_system}}</li>
+        <li>
+            Accessories:
+            <div>
+                <ul>
+                <li>{{#each accessories}} {{name}} price: {{price}} {{/each}}</li>
+                </ul>
+            </div> 
+        </li>   
+    </ul>
+    {{/with}}
+</div>
