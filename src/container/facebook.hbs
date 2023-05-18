@@ -1,0 +1,75 @@
+<div>
+    <h1>Facebook</h1>
+</div>
+<hr>
+<div>
+    <h2>Users:</h2>
+    {{#each users}}
+        <ul>
+            <li>
+                {{name}} id:({{id}})
+                {{gender}} {{age}}
+            </li>
+            <b>Friends:</b>
+            {{#each friends}}
+                <ul>
+                    <li>{{name}} id:({{id}}), {{gender}} {{age}}</li>
+                    <b>Mutual friends</b>
+                    {{#each mutual_friends}}
+                        <ul>
+                            <li>{{name}} id:({{id}}), {{gender}} {{age}}</li>
+                            
+                        {{#each mutual_friends}}
+                        <b>Mutual friends</b>
+                        <ul>
+                            <li>{{name}} id:({{id}}), {{gender}} {{age}}</li>
+                        </ul>
+                        {{/each}}
+                        </ul>
+                    {{/each}}
+                </ul>
+                <b>Groups</b>
+                {{#each groups}}
+                <ul>
+                    <li>
+                        {{name}}
+                        <div>
+                            <i>{{description}}</i>
+                        </div>
+                        <div>
+                            <b>
+                            Members: 
+                            </b>
+                            {{#each members}}
+                            <ul>
+                                <li>{{name}} id:({{id}}), {{gender}} {{age}}</li>
+                            </ul>
+                            {{/each}}
+                        </div>
+                    </li>
+                </ul>
+            {{/each}}
+            {{/each}}
+            {{#each groups}}
+                <ul>
+                    <li>
+                        {{name}}
+                        <div>
+                            <i>{{description}}</i>
+                        </div>
+                        <div>
+                            <b>
+                            Members: 
+                            </b>
+                            {{#each members}}
+                            <ul>
+                                <li>{{name}} id:({{id}}), {{gender}} {{age}}</li>
+                            </ul>
+                            {{/each}}
+                        </div>
+                    </li>
+                </ul>
+            {{/each}}
+        </ul>
+    {{/each}}
+</div>
