@@ -1,0 +1,131 @@
+<div>
+    <h1>{{make}} {{model}} ({{year}})</h1>
+    <div><i>Color: {{color}}</i></div>
+</div>
+<br>
+<div>
+    <h2>Features</h2>
+    <br>
+    {{#with features}}
+        <ul>
+            <li><b>Interior</b></li>
+            <br>
+            {{#with interior}}
+            <ul>
+                {{#with seats}}
+                <li>
+                   Seats: {{material}}, {{color}} {{#if heated heated=true}}(heated ventilated) {{/if}}
+                </li>
+                {{/with}}
+                {{#with dashboard}}
+                <li>
+                   Dashboard: {{material}}, ({{color}}) - 
+                {{#with display}}
+                    {{type}} {{size}}
+                    {{#if touchscreen touchscreen=true}} ({{resolution}} touchscreen) {{/if}}
+                {{/with}}
+                {{/with}}
+                </li>
+                {{#with audio}}
+                <li>
+                   Audio: {{system}}, {{speakers}} {{#if subwoofer subwoofer=true}}speakers with subwoofer Bluetooth USB{{/if}}
+                </li>
+                {{/with}}
+                
+            </ul>
+            <br>
+            {{/with}}
+            <li><b>Exterior</b></li>
+            <br>
+            {{#with exterior}}
+            <ul>
+                {{#with wheels}}
+                <li>
+                   Wheels: {{size}}" {{type}}({{color}})
+                </li>
+                {{/with}}
+                {{#with headlights}}
+                <li>
+                   Headlights: {{type}} 
+                    {{#if automatic automatic=true}} (high {{brightness}} automatic) {{/if}}
+                {{/with}}
+                </li>
+                {{#with sunroof}}
+                <li>
+                   Sunroof: {{type}} {{#if automatic automatic=true}}({{size}} automatic){{/if}}
+                </li>
+                {{/with}}
+            </ul>
+            <br>
+            {{/with}}
+            <li><b>Safety</b></li>
+            {{#with safety}}
+            <ul>
+                {{#with airbags}}
+                <li>
+                   Airbags: Front - {{front}}, Side - {{side}}, Knee - {{knee}}, Rear - {{rear}}
+                </li>
+                {{/with}}
+                {{#with assistance}}
+                <li>
+                   Assistance: {{type}} 
+                    {{#if blind_spot_monitoring blind_spot_monitoring=true}}Blind spot monitoring, Rear cross traffic alert, Lane departure warning, Adaptive cruise control, Collisionwarning{{/if}}
+                {{/with}}
+                </li>
+                {{#with sunroof}}
+                <li>
+                   Sunroof: {{type}} {{#if automatic automatic=true}}({{size}} automatic){{/if}}
+                </li>
+                {{/with}}
+            </ul>
+            <br>
+            {{/with}}
+        </ul>
+    {{/with}}
+</div>
+<div>
+    <h2>Engine</h2>
+    {{#with engine}}
+        <ul>
+            <li>Type: {{type}}</li>
+            <li>Displacement: {{displacement}}</li>
+            <li>Horsepower: {{horsepower}}</li>
+            <li>Torque: {{torque}}</li>
+            {{#with transmission}}
+                <li>Transmission: {{type}}({{gears}} gears)</li>
+            {{/with}}
+        </ul>
+    {{/with}}
+</div>
+<div>
+    <h3>Fuel economy</h3>
+    {{#with fuel_economy}}
+        <ul>
+            <li>City: {{city}}</li>
+            <li>Highway: {{highway}}</li>
+            <li>Combined: {{combined}}</li>
+        </ul>
+    {{/with}}
+</div>
+<div>
+    <h3>Price</h3>
+    {{#with price}}
+    <ul>
+        <li>Base: {{base}}</li>
+        <li>Destination: {{destination}}</li>
+        <li>
+            {{#with options}}
+            Options: 
+            <ul>
+                <li>Navigation: {{navigation}}</li>
+                <li>Moonroof: {{moonroof}}</li>
+                <li>Premium paint: {{premium_paint}}</li>
+            </ul>
+            {{/with}}
+        </li>
+        <br>
+        <hr>
+        <strong>Total: {{total}}</strong>
+    </ul>
+    {{/with}}
+</div>
