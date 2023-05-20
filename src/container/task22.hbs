@@ -1,64 +1,94 @@
 <div class="card card-body">
-    <h1 class="text-center">H1 Heading</h1>
-    <p class="text-uppercase text-center">Paragraph</p>
+    {{#with page_header}}
+    <h1 class="text-center">{{title}}</h1>
+    <p class="text-uppercase text-center">{{description}}</p>
+    {{/with}}
     <hr>
-    <div class="display-6 text-end">Display 6</div>
+    {{#with section}}
+    {{#with about_us}}
+    {{#with title_list}}
+    <div class="display-6 text-end">{{main}}</div>
     <div>
-        <h2 class="text-end">H2 Heading</h2>
+        <h2 class="text-end">{{sub}}</h2>
     </div>
+    {{/with}}
+    {{#with button}}
     <div>
-        <button class="btn btn-outline-info">Info</button>
+        <button class="btn btn-outline-info">{{text}}</button>
     </div>
+    {{/with}}
+    {{/with}}
 </div>
 <br>
 <div class="card card-header">
-    <div class="display-4">Display 5 Advantage</div>
+    {{#with advantage}}
+    <div class="display-4">{{title}}</div>
     <br>
     <div class="card card-body">
-        <div class="display-5">Display 4 efficiency</div>
+        {{#with efficiency}}
+        <div class="display-5">{{title}}</div>
         <br>
         <div>
-            <h6>H6 Heading</h6>
+            <h6>{{sub_title}}</h6>
         </div>
         <br>
-        <p class="text-capitalize">Paragraph</p>
+        <p class="text-capitalize">{{description}}</p>
         <div>
-            <button class="btn btn-outline-warning">Warning</button>
+            <button class="btn btn-outline-warning">{{button}}</button>
         </div>
+        {{/with}}
     </div>
     <br>
     <div class="card card-body">
-        <div class="display-5 text-center">Display 4 Innovation</div>
+        {{#with innovation}}
+        <div class="display-5 text-center">{{title}}</div>
         <br>
-        <p class="text-capitalize text-center">Paragraph</p>
         <div>
-            <button class="btn btn-outline-warning">Warning</button>
+            <h6>{{sub_title}}</h6>
         </div>
+        <p class="text-capitalize text-center">{{description}}</p>
+        <div>
+            <button class="btn btn-outline-warning">{{button}}</button>
+        </div>
+        {{/with}}
     </div>
     <br>
     <div class="card card-body">
-        <div class="display-5 text-end">Display 4 collaboration</div>
+        {{#with collaboration}}
+        <div class="display-5 text-end">{{title}}</div>
         <br>
-        <p class="text-capitalize text-end">Paragraph</p>
         <div>
-            <button class="btn btn-outline-warning">Warning</button>
+            <h6>{{sub_title}}</h6>
         </div>
+        <p class="text-capitalize text-end">{{description}}</p>
+        <div>
+            <button class="btn btn-outline-warning">{{button}}</button>
+        </div>
+        {{/with}}
     </div>
+    {{/with}}
 </div>
 </div>
 <br>
 <div>
-    <div class="display-5"> Display 5 agreement</div>
+    {{#with agreement}}
+    <div class="display-5">{{title}}</div>
     <br>
         <div class="card card-body">
-            <h5>H5 Heading</h5>
+            {{#with info}}
+            <h5>{{sub_title}}</h5>
         
         <hr>
+        {{#with detail}}
         <div>
-            <p>Paragraph</p>
+            <p>{{description}}</p>
         </div>
         <div>
-            <button class="btn btn-success">Success</button>
+            <button class="btn btn-success">{{button}}</button>
         </div>
+        {{/with}}
+        {{/with}}
     </div>
+    {{/with}}
 </div>
+{{/with}}
