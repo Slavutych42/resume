@@ -185,14 +185,27 @@
     {{#with footer}}
         <h5>{{title}}</h5>
         <br>
-        <div>
-            <div class="col-1">
-            {{#each navigation}}
-                <a href="{{href}}"><button class="btn btn-link">{{text}}</button></a>
-            {{/each}}
-            {{#each socialMedia}}
-                <a href="{{link}}"><button class="btn btn-dark">{{name}}</button></a>
-            {{/each}}
+        <div class="row">
+            <div class="col-4">
+                {{#each navigation}}
+                <ul>
+                    <li><a href="{{href}}"><button class="btn btn-link">{{text}}</button></a></li>
+                </ul>
+                {{/each}}
+            </div>
+            <div class="col-4">
+                {{#each socialMedia}}
+                <ul>
+                    <li><a href="{{link}}"><button class="btn btn-dark">{{name}}</button></a></li>
+                </ul>
+                {{/each}}
+            </div>
+            <div class="col-4">
+                {{#each partners}}
+                <ul>
+                    <li><a href="{{link}}"><button class="btn btn-info">{{name}}</button></a></li>
+                </ul>
+                {{/each}}
             </div>
         </div>
     {{/with}}
