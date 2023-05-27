@@ -17,7 +17,7 @@
             <h1 class="text-center">{{title}}</h1>
             <div class="row">
                 {{#each cards}} 
-                    <div class="card col-3 m-2 text-bg-dark">
+                    <div class="card col-3 text-bg-dark">
                         <div class="card-header">
                             {{title}}
                             {{#if isTop}}<div class="badge text-bg-danger rounded-pill">Top</div>{{/if}}
@@ -47,7 +47,7 @@
             </div>
             <div class="row">
                 {{#each cards}}
-                    <div class="card col-4 m-2">
+                    <div class="card col-4">
                         <div class="card-img-top">
                             <img src="{{image}}" alt="Photo">
                         </div>
@@ -85,21 +85,21 @@
         {{/with}}
     </div>
     <hr>
-    <div class="row">
-        <div class="row">
-            {{#each footer}}
-            <div class="col-2">
+    <div class="row mb-5">
+        {{#each footer}}
+            <ul class="nav flex-column col-2">
                 {{#each this}}
-                <ul>
-                    <li>
-                        <a href="{{link}}">
-                            <button class="btn btn-link">{{text}}</button>
-                        </a>
+                {{#if @last}}
+                    <li class="nav-link">
+                        <a class="nav-link disabled" href="{{link}}">{{text}}</a>
                     </li>
-                </ul>
+                    {{else}}
+                    <li class="nav-link">
+                        <a class="nav-link" href="{{link}}">{{text}}</a>
+                    </li>
+                {{/if}}
                 {{/each}}
-            </div>
-            {{/each}}
-        </div>
+            </ul>
+        {{/each}}
     </div>
 </main>
