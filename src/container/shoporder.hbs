@@ -1,0 +1,89 @@
+<main class="p-4">
+    {{#with navigation}}
+        <div class="row">
+            {{#each links}}
+                <div class="col-2">
+                    <div class="nav nav-tabs">
+                        <div class="nav-item">
+                            <a href="{{href}}" class="nav-link">{{text}}</a>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{/with}}
+    <div class="row">
+        <div class="col-8">
+            <div class="mt-4">
+                <h1>{{header}}</h1>
+            </div>
+            <div class="mt-5">
+            {{#with contacts_data}}
+                <h2 class="mb-3">{{title}}</h2>
+                {{#each buttons}}
+                    {{#if isPrimary}}<button class="btn btn-warning">{{text}}</button>{{/if}}
+                    {{#if isOutline}}<button class="btn btn-outline-warning">{{text}}</button>{{/if}}
+                {{/each}}
+                <div class="col-4">
+                    {{#with form}}
+                        {{#with input}}
+                            {{#with surname}}
+                                <div class="mt-2 col-4">
+                                    <label class="form-label">{{label}}</label>
+                                    <input class="form-control" placeholder="{{placeholder}}">
+                                    <div class="form-text">{{caption}}</div>
+                                </div>
+                            {{/with}}
+                            {{#with name}}
+                                <div class="mt-2 col-4">
+                                    <label class="form-label">{{label}}</label>
+                                    <input class="form-control" placeholder="{{placeholder}}">
+                                    <div class="form-text">{{caption}}</div>
+                                </div>
+                            {{/with}}
+                            {{#with phone}}
+                                <div class="mt-2 col-4">
+                                    <label class="form-label">{{label}}</label>
+                                    <input class="form-control" placeholder="{{placeholder}}">
+                                    <div class="form-text">{{caption}}</div>
+                                </div>
+                            {{/with}}
+                            {{#with email}}
+                                <div class="mt-2 col-4">
+                                    <label class="form-label">{{label}}</label>
+                                    <input class="form-control" placeholder="{{placeholder}}">
+                                    <div class="form-text">{{caption}}</div>
+                                </div>
+                            {{/with}}
+                        {{/with}}
+                        <hr class="m-4">
+                        <div>
+                            {{#each switch}}
+                                <div class="form-check form-switch">
+                                    <label class="form-check-label">{{text}}</label>
+                                    <input type="checkbox" class="form-check-input">
+                                </div>
+                            {{/each}}
+                        </div>
+                        <hr class="m-4">
+                    {{/with}}
+                </div>
+            {{/with}}
+        </div>
+                <div class="col-4">
+                    <div class="card p-2">
+                    {{#each action_block}}
+                        {{#if isSuccess}}<button class="btn btn-success m-2">{{text}}</button>{{/if}}
+                        {{#if isDanger}}<button class="btn btn-danger m-2">{{text}}</button>{{/if}}
+                        {{#if isInfo}}<button class="btn btn-info m-2">{{text}}</button>{{/if}}
+                    {{/each}}
+                    </div>
+                    <div class="card">
+                        {{#with total}}
+                            <h3>{{title}}</h3>
+                        {{/with}}
+                    </div>
+                </div>
+        
+    </div>
+</main>
