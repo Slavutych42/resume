@@ -17,15 +17,15 @@
             <div class="mt-4">
                 <h1>{{header}}</h1>
             </div>
-            <div class="mt-5">
             {{#with contacts_data}}
                 <h2 class="mb-3">{{title}}</h2>
                 {{#each buttons}}
                     {{#if isPrimary}}<button class="btn btn-warning">{{text}}</button>{{/if}}
                     {{#if isOutline}}<button class="btn btn-outline-warning">{{text}}</button>{{/if}}
                 {{/each}}
-                <div class="col-4">
+                <div>
                     {{#with form}}
+                    <div class="row">
                         {{#with input}}
                             {{#with surname}}
                                 <div class="mt-2 col-4">
@@ -56,6 +56,7 @@
                                 </div>
                             {{/with}}
                         {{/with}}
+                    </div>
                         <hr class="m-4">
                         <div>
                             {{#each switch}}
@@ -70,20 +71,9 @@
                 </div>
             {{/with}}
         </div>
-                <div class="col-4">
-                    <div class="card p-2">
-                    {{#each action_block}}
-                        {{#if isSuccess}}<button class="btn btn-success m-2">{{text}}</button>{{/if}}
-                        {{#if isDanger}}<button class="btn btn-danger m-2">{{text}}</button>{{/if}}
-                        {{#if isInfo}}<button class="btn btn-info m-2">{{text}}</button>{{/if}}
-                    {{/each}}
-                    </div>
-                    <div class="card">
-                        {{#with total}}
-                            <h3>{{title}}</h3>
-                        {{/with}}
-                    </div>
-                </div>
-        
+        </div>
+        <div class="col-4">
+            fbsrbs
+        </div>  
     </div>
 </main>
