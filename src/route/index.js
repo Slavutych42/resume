@@ -2135,7 +2135,7 @@ router.get('/shopcart', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcart', {
-    layout: 'shop',
+    layout: 'basic',
     navigation: {
       links: [
         {
@@ -2226,7 +2226,7 @@ router.get('/shopcart', function (req, res) {
           isSuccess: true,
         },
         {
-          text: 'Офрмити кредит',
+          text: 'Оформити кредит',
           link: 'https://www.youtube.com/',
           isOutline: true,
         },
@@ -2237,7 +2237,7 @@ router.get('/shopcart', function (req, res) {
       title: 'See other products',
       cards: [
         {
-          image: 'https://picsum.photos/400/200',
+          image: 'https://picsum.photos/200/100',
           title: 'iPhone 13',
           description:
             'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
@@ -2245,7 +2245,7 @@ router.get('/shopcart', function (req, res) {
           idNew: false,
         },
         {
-          image: 'https://picsum.photos/400/200',
+          image: 'https://picsum.photos/200/100',
           title: 'MacBook Pro',
           description:
             "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
@@ -2253,7 +2253,7 @@ router.get('/shopcart', function (req, res) {
           idNew: false,
         },
         {
-          image: 'https://picsum.photos/400/200',
+          image: 'https://picsum.photos/200/100',
           title: 'AirPods Pro',
           description:
             "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
