@@ -1,0 +1,66 @@
+{{#each reviewList}}
+    <div class="card p-2 ms-4">
+        <div class="card">
+            <div class="card-header">
+                {{#with title}}
+                    <h6>{{userName}}</h6>
+                    <p>{{caption}}</p>
+                    <div>{{date}}</div>
+                {{/with}}
+            </div>
+            <div>
+                {{#with reviewBody}}
+                    <div class="m-4">
+                        {{#with seller}}
+                            {{title}}: {{value}}
+                        {{/with}}
+                    </div>
+                    <div class="m-4">
+                        {{#with rating}}
+                            {{title}}: {{value}}
+                        {{/with}}
+                    </div>
+                    <div class="m-4">
+                        {{#each text}}
+                            <blockquote>{{this}}</blockquote>
+                        {{/each}}
+                    </div>
+                    <div class="m-4">
+                        {{#with advantages}}
+                            <b>{{title}}:</b>
+                            <div>{{text}}</div>
+                        {{/with}}
+                    </div>
+                    <div class="m-4">
+                        {{#with disadvantages}}
+                            <b>{{title}}:</b>
+                            <div>{{text}}</div>
+                        {{/with}}
+                    </div>
+                    <div class="m-4">
+                        <div class="row">
+                            <div class="col-6">
+                                {{#each images}}
+                                    <img src="{{this}}">
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                    {{#each coments}}
+                        <div class="card m-4 p-3">
+                            <h5>
+                                {{userName}}
+                            </h5>
+                            <div>
+                                {{date}}
+                            </div>
+                            <div>
+                                {{text}}
+                            </div>
+                        </div>
+                    {{/each}}
+                {{/with}}
+            </div>
+        </div>
+    </div>
+{{/each}}
