@@ -1,81 +1,77 @@
-{{#with program}}
-{{#with excursion}}
-        <div>
-            <h1>{{name}}</h1>
-            <hr>
-            <br>
+<div class="m-4">
+    {{#with program}}
+    {{#with excursion}}
             <div>
-                {{#with location}}
-                <h2>Location:</h2> <address>{{city}}, {{country}}</address>
-                {{/with}}
+                <h1>{{name}}</h1>
+                <hr class="mb-4">
+                <div>
+                    {{#with location}}
+                    <h2>Location:</h2> <address>{{city}}, {{country}}</address>
+                    {{/with}}
+                </div>
+                <div class="mt-4 mb-4">{{date}}</div>
             </div>
-            <br>
-            <div>{{date}}</div>
-            <br> 
+        
+        <div>
+            <h2>Program:</h2>
         </div>
-    
-    <div>
-        <h2>Program:</h2>
-    </div>
-    <div>
-        {{#each program}}
-            <ul>
-                <li>{{name}}</li>
-            <div>
-                <section>
-                        <div>Type: {{type}}</div>
-                        <div>Duration: {{duration}}</div>
-                        {{#with details}}
-                        {{#with museum}}
-                            <div><b>{{name}}</b></div>
-                            {{#with location}}
-                                <div><address>{{address}}, {{city}}, {{country}}</address></div>
-                            {{/with}}
-                            <br>
-                            <div><i>Exhibits:</i></div>
-                            {{#each exhibits}}
-                                <ul>
-                                    <li>
-                                        <b>{{name}}</b> 
-                                        <div>{{artist}}</div>
-                                        <div>{{description}}</div>
-                                        <div>
-                                            {{#if audio_guide audio_guide=true}}
-                                                (audio guide)
-                                            {{/if}}
-                                        </div>
+        <div>
+            {{#each program}}
+                <ul>
+                    <li>{{name}}</li>
+                <div>
+                    <section>
+                            <div>Type: {{type}}</div>
+                            <div>Duration: {{duration}}</div>
+                            {{#with details}}
+                            {{#with museum}}
+                                <div><b>{{name}}</b></div>
+                                {{#with location}}
+                                    <div><address>{{address}}, {{city}}, {{country}}</address></div>
+                                {{/with}}
+                                <div class="mt-4"><i>Exhibits:</i></div>
+                                {{#each exhibits}}
+                                    <ul>
+                                        <li>
+                                            <b>{{name}}</b> 
+                                            <div>{{artist}}</div>
+                                            <div>{{description}}</div>
+                                            <div>
+                                                {{#if audio_guide audio_guide=true}}
+                                                    (audio guide)
+                                                {{/if}}
+                                            </div>
 
+                                        </li>
+                                    </ul>
+                                {{/each}}
+                            {{/with}}
+                            {{#with venue}}
+                                <div><b>{{name}}</b></div>
+                                {{#with location}}
+                                <div><address>{{address}}, {{city}}, {{country}}</address></div>
+                                {{/with}}
+                            {{/with}}
+                            {{#each performers}}
+                                <ul class="mt-4">
+                                    <li>
+                                        {{name}}, {{type}}
                                     </li>
                                 </ul>
                             {{/each}}
-                        {{/with}}
-                        {{#with venue}}
-                            <div><b>{{name}}</b></div>
-                            {{#with location}}
-                            <div><address>{{address}}, {{city}}, {{country}}</address></div>
+                                <div class="mt-4">
+                                    {{#with guide}}
+                                        <div>Guide: {{name}}</div>
+                                        <div>Language: {{language}}</div>
+                                        <div>Rating: {{rating}}</div>
+                                    {{/with}}
+                                </div>
                             {{/with}}
-                        {{/with}}
-                        <br>
-                        {{#each performers}}
-                            <ul>
-                                <li>
-                                    {{name}}, {{type}}
-                                </li>
-                            </ul>
-                        {{/each}}
-                        <br>
-                            <div>
-                                {{#with guide}}
-                                    <div>Guide: {{name}}</div>
-                                    <div>Language: {{language}}</div>
-                                    <div>Rating: {{rating}}</div>
-                                {{/with}}
-                            </div>
-                        {{/with}}
-                </section>
-            </div>
-            </ul>
-        {{/each}}
-    </div>
-{{/with}}
-{{/with}}
+                    </section>
+                </div>
+                </ul>
+            {{/each}}
+        </div>
+    {{/with}}
+    {{/with}}
+</div>

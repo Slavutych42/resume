@@ -1,20 +1,13 @@
-
+<div class="m-4">
     <header>
         <h1>Short biography of <b>{{name}}</b></h1>
-        <hr>
-        <br>
-        <div>Birthday - <i>{{birthdate}}</i></div>
-        <br>
-        <address><div>Birthplace - {{birthplace}}</div></address>
-        <br>
-        <div>Deathdate - <i>{{deathdate}}</i></div>
-        <br>
-        <address><div>Deathplace - {{deathplace}}</div></address>
-        <br>
-        <div>Nationality - <i>{{nationality}}</i></div>
-        <br>
-        <div>Occupation - <i>{{occupation}}</i></div>
-        <br>
+        <hr class="m-4">
+        <div class="mb-3">Birthday - <i>{{birthdate}}</i></div>
+        <address><div class="mb-3">Birthplace - {{birthplace}}</div></address>
+        <div class="mb-3">Deathdate - <i>{{deathdate}}</i></div>
+        <address><div class="mb-3">Deathplace - {{deathplace}}</div></address>
+        <div class="mb-3">Nationality - <i>{{nationality}}</i></div>
+        <div class="mb-3">Occupation - <i>{{occupation}}</i></div>
         <div>
             Known for:
             {{#each known_for}}
@@ -23,25 +16,22 @@
             </ul>
             {{/each}}
     </header>
-    </div>
+
     <body>
         <div><h2>Education</h2></div>
         <hr>
         <div>
             {{#each education}}
-                <div>
+                <div class="mb-3">
                     <b>Degree:</b> {{degree}}
                 </div>
-                <br>
-                <div>
+                <div class="mb-3">
                     <b>Field:</b> {{field}}
                 </div>
-                <br>
-                <div>
+                <div class="mb-3">
                     <b>Institution:</b> {{institution}}
                 </div>
-                <br>
-                <div>
+                <div class="mb-3">
                     <b>Year:</b> {{year}}
                 </div>
             {{/each}}
@@ -104,37 +94,32 @@
                 {{/each}}
             </div>
         </div>
-        <br>
-        <div>
+        <div class="mt-4">
             <strong>Major discoveries</strong>
             <hr>
             <div>
                 {{#each major_discoveries}}
-                    <div>
+                    <div class="mb-3">
                         <b>{{title}}</b>({{year}})
                     </div>
-                    <br>
                     <div><i>{{description}}</i></div>
                 {{/each}}
             </div>
         </div>
-        <br>
-        <div>
+        <div class="mt-4">
             <strong>Contributions</strong>
             <hr>
-            <br>
             {{#with contributions}}
-                <div>
+                <div class="mt-4 mb-3">
                     <b>{{title}}</b> ({{year}})
                 </div>
-                <br>
-                <div>
+                <div class="mb-3">
                     <i>Field - {{title}}</i>
                 </div>
-                <br>
                 <div>
                     <i>{{description}}</i>
                 </div>
             {{/with}}
         </div>
     </body>
+</div>
